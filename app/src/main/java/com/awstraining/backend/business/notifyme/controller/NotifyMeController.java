@@ -12,7 +12,8 @@ import org.springframework.http.ResponseEntity;
 // TODO: lab1
 //  1. Create RestController "notification/v1".
 //  2. Familiarize yourself with api, open-api contract, how it is generated?
-@RestController("notification/v1")
+@RestController
+@RequestMapping("notification/v1")
 public class NotifyMeController implements NotifyMeApi {
 
     private NotifyMeService mNotifyMeService;
