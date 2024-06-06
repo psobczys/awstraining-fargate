@@ -1,4 +1,4 @@
-# AWS CICD (GitHub Actions)
+# CICD (GitHub Actions)
 ## Duration
 * 8h
 
