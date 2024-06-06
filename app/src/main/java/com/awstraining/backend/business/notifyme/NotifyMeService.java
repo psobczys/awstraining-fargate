@@ -7,13 +7,14 @@ public class NotifyMeService {
 
     // TODO: lab1
     //  1. Inject MessageSender.
+    private MessageSender mMessageSender;
     // TODO lab2
     //  1. Inject Translator
     // TODO lab3
     //  1. Inject sentiment detector
-//    @Autowired
-    public NotifyMeService() {
-
+    @Autowired
+    public NotifyMeService(MessageSender messageSender) {
+        this.mMessageSender = messageSender;
     }
     
     public String notifyMe(NotifyMeDO notifyMe) {
@@ -27,7 +28,10 @@ public class NotifyMeService {
         // TODO: lab3
         //  1. Detect sentiment of translated message.
         //  2. Change sending of text to "setiment: translated text" and return it.
-        return "This service is not available.";
+
+        final String text = notifyMe.text();
+        mMessageSender.send(text);
+        return text;
     }
     
 }
